@@ -1,11 +1,54 @@
 data = {
   thread: {
     t1: {
-      key: "t1",
+      ".key": "t1",
       title: "",
       publishedAt: "",
-      posts: {},
-      userId: ""
+      posts: {
+        p1: "p1"
+      },
+      userId: "u1"
+    }
+  },
+  post: {
+    p1: {
+      ".key": "p1",
+      publishedAt: "",
+      userId: "u1",
+      text: "Hi there",
+      threadId: "t1"
+    }
+  },
+  users: {
+    u1: {
+      name: "Kaori",
+      ".key": "u1",
+      threads: {
+        t1: "t1"
+      },
+      posts: {
+        p1: "p1"
+      }
+    }
+  },
+  forums: {
+    f1: {
+      ".key": "f1",
+      name: "Fishing",
+      description: "",
+      categoryId: "c1",
+      threads; {
+        t1: "t1"
+      }
+    }
+  },
+  categories: {
+    c1: {
+      ".key": "c1",
+      name: "Disuccusion",
+      forums: {
+        f1: "f1"
+      }
     }
   }
 }
