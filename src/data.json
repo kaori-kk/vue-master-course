@@ -1,0 +1,11 @@
+data = {
+  thread: {
+    t1: {
+      key: "t1",
+      title: "",
+      publishedAt: "",
+      posts: {},
+      userId: ""
+    }
+  }
+}
