@@ -1,32 +1,114 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <main>
+      <div class="search-box">
+        <input type="text" class="search-bar" placeholder="Search..."/>
+        <div class="weather-wra">
+          <div class="location-box">
+            <div class="location">Northamption, UK</div>
+            <div class="date">Monday 20 January 2020</div>
+          </div>
+
+          <div class="weather-box">
+            <div class="temp">9℃</div>
+            <div class="weather">Rain</div>
+          </div>
+        </div>
+      </div>
+    </main>
   </div>
 </template>
 
+<script>
+export default {
+  name: 'app',
+  data () {
+    return {
+      api_key: '9987ae6ad93f5cd6acbf3b2ff18ac27d'
+    }
+  },
+  methods: {
+  }
+}
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+  }
 
-#nav {
-  padding: 30px;
-}
+  body {
+    font-family: "montserrat", sans-serif;
+  }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  #app {
+    background-image: url("./assets/cold-bg.png");
+    background-size: cover;
+    background-position: bottom;
+    transition: 0.4s;
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+  }
+
+  main {
+    min-height: 100vh;
+    padding: 25px;
+    background-image: linear-gradient(to button, rgba(0,0,0,0.25), rgba(0,0,0,0.75))
+  }
+
+  .search-box{
+    width: 100%;
+    margin-bottom: 30px; 
+  }
+
+  .search-box .search-bar{
+    display: block;
+    width: 100%;
+    padding: 15px;
+
+    color: #313131;
+    font-size: 20px;
+
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.25);
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 0px 16px 0px 16px;
+    transition: 0.5s;
+  }
+
+  .search-box .search-bar:focus{
+    background-color: rgba(255,255,255,0.75);
+    box-shadow: 0px 0px 16px rgba(0,0,0,0.25);
+    border-radius: 16px 0px 16px 0px;
+  }
+
+  .location-box .location{
+    margin-top: 20px;
+    color: #222;
+    font-weight: 500;
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .location-box .date {
+    color: #222;
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+    font-style: italic;
+  }
+
+  .weather-box{
+    text-align: center;
+  }
+
+  .weather-box .temp {
+    display: inline-block;
+    padding: 10px 25px;
+  }
 </style>
